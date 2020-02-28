@@ -1,0 +1,30 @@
+﻿<Properties StartupConfiguration="{423F8656-91EA-4A1B-9994-638BB6EDE542}|Default">
+  <MonoDevelop.Ide.ItemProperties.DenemeBL.Android PreferredExecutionTarget="Android.Android" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="DenemeBL.Android/Renderers/entryRenderer.cs">
+    <Files>
+      <File FileName="DenemeBL/MainPage.xaml.cs" Line="150" Column="121" />
+      <File FileName="DenemeBL/MainPage.xaml" />
+      <File FileName="DenemeBL.Android/Renderers/entryRenderer.cs" Line="26" Column="10" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="DenemeBL" expanded="True">
+            <Node name="DenemeBL.Android" expanded="True">
+              <Node name="Renderers" expanded="True">
+                <Node name="entryRenderer.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.DenemeBL.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.7AB1A33F-1B61-4D12-8640-1068EF353FAD" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

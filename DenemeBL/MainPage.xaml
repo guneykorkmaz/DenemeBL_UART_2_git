@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             xmlns:controls="clr-namespace:Refractored.XamForms.PullToRefresh;assembly=Refractored.XamForms.PullToRefresh"
+             mc:Ignorable="d"
+             x:Class="DenemeBL.MainPage"
+             BackgroundColor="#1d3749">
+    <StackLayout x:Name="window" BackgroundColor="#1d3749">
+        <controls:PullToRefreshLayout x:Name="rfr" IsPullToRefreshEnabled="True" RefreshCommand="{Binding RefreshCommand}" IsRefreshing="{Binding IsBusy}" RefreshBackgroundColor="#1d3749" RefreshColor="White">
+            <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="#1d3749">
+                <StackLayout x:Name="page" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="20" Padding="10, 10, 10, 20" BackgroundColor="#1d3749">
+                    <Label x:Name="info" Text="Welcome to CurAlive" HorizontalTextAlignment="Center" HorizontalOptions="Center" />
+                    <StackLayout Orientation="Horizontal" Spacing="20" >
+                        <Frame HorizontalOptions="Start">
+                            <Grid ColumnSpacing="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="time.png" Grid.Column="0" HeightRequest="20" Aspect="AspectFit" VerticalOptions="Center" Margin="5, 0, 0, 0" />
+                                <Picker x:Name="mTime" Grid.Column="1" Title="Recording Time">
+                                    <Picker.ItemsSource>
+                                        <x:Array Type="{x:Type x:String}">
+                                            <x:String>10 seconds</x:String>
+                                            <x:String>20 seconds</x:String>
+                                            <x:String>30 seconds</x:String>
+                                            <x:String>60 seconds</x:String>
+                                        </x:Array>
+                                    </Picker.ItemsSource>
+                                </Picker>
+
+                            </Grid>
+                        </Frame>
+                        <Button x:Name="btnRecord" Text="Record ECG" Clicked="btnRecord_Clicked" />
+                    </StackLayout>
+
+                    <OnPlatform x:TypeArguments="View">
+                        <OnPlatform.iOS>
+                            <skia:SKCanvasView x:Name="counteriOS" PaintSurface="count_PaintSurface" HorizontalOptions="Fill" HeightRequest="15" />
+                        </OnPlatform.iOS>
+                        <OnPlatform.Android>
+                            <skia:SKGLView x:Name="counterAndro" PaintSurface="count_PaintSurface" HorizontalOptions="Fill" HeightRequest="15" />
+                        </OnPlatform.Android>
+                    </OnPlatform>
+
+                    <OnPlatform x:TypeArguments="View">
+                        <OnPlatform.iOS>
+                            <skia:SKCanvasView x:Name="chartiOS" PaintSurface="chart_PaintSurface" HorizontalOptions="Fill" />
+                        </OnPlatform.iOS>
+                        <OnPlatform.Android>
+                            <skia:SKGLView x:Name="chartAndro" PaintSurface="chart_PaintSurface" HorizontalOptions="Fill" />
+                        </OnPlatform.Android>
+                    </OnPlatform>
+
+                    <StackLayout x:Name="sendContainer" Spacing="20" HorizontalOptions="Fill" VerticalOptions="EndAndExpand" IsVisible="False">
+                        <Frame>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" Spacing="5">
+                                <StackLayout WidthRequest="30" HorizontalOptions="Start" VerticalOptions="Center">
+                                    <Image Source="notes.png" HeightRequest="20" Aspect="AspectFit" HorizontalOptions="Center" VerticalOptions="Center" Margin="5, 0, 0, 0" />
+                                </StackLayout>
+                                <Editor x:Name="notes" Placeholder="Add notes" />
+                            </StackLayout>
+                        </Frame>
+                        <Button x:Name="btnSend" Text="Send ECG" Clicked="btnSend_Clicked" />
+                    </StackLayout>
+
+                </StackLayout>
+            </ScrollView>
+        </controls:PullToRefreshLayout>
+    </StackLayout>
+</ContentPage>

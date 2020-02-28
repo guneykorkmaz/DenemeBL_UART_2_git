@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DenemeBL.App">
+    <Application.Resources>
+        <OnPlatform x:TypeArguments="x:String" x:Key="Light">
+            <On Platform="iOS" Value="IBMPlexSansCondensed-Light" />
+            <On Platform="Android" Value="IBMPlexSansCondensed-Light.ttf#IBMPlexSansCondensed-Light" />
+        </OnPlatform>
+        <OnPlatform x:TypeArguments="x:String" x:Key="Regular">
+            <On Platform="iOS" Value="IBMPlexSansCondensed-Regular" />
+            <On Platform="Android" Value="IBMPlexSansCondensed-Regular.ttf#IBMPlexSansCondensed-Regular" />
+        </OnPlatform>
+        <OnPlatform x:TypeArguments="x:String" x:Key="Medium">
+            <On Platform="iOS" Value="IBMPlexSansCondensed-Medium" />
+            <On Platform="Android" Value="IBMPlexSansCondensed-Medium.ttf#IBMPlexSansCondensed-Medium" />
+        </OnPlatform>
+
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontFamily" Value="{StaticResource Light}" />
+            <Setter Property="FontSize" Value="16" />
+        </Style>
+
+        <Style TargetType="Entry">
+            <Setter Property="PlaceholderColor" Value="WhiteSmoke" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontFamily" Value="{StaticResource Light}" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        </Style>
+
+        <Style TargetType="Editor">
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="PlaceholderColor" Value="WhiteSmoke" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontFamily" Value="{StaticResource Light}" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="HorizontalOptions" Value="Fill" />
+            <Setter Property="AutoSize" Value="TextChanges" />
+        </Style>
+
+        <Style TargetType="Picker">
+            <Setter Property="TitleColor" Value="WhiteSmoke" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontFamily" Value="{StaticResource Light}" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="FontFamily" Value="{StaticResource Medium}" />
+            <Setter Property="TextColor" Value="#1d3749" />
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
+
+        <Style TargetType="Frame">
+            <Setter Property="HorizontalOptions" Value="Fill" />
+            <Setter Property="Padding" Value="10, 5, 10, 5" />
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="BorderColor" Value="White" />
+            <Setter Property="CornerRadius" Value="20" />
+            <Setter Property="HasShadow" Value="False" />
+        </Style>
+
+    </Application.Resources>
+</Application>
